@@ -8,6 +8,7 @@
 <f:view>
     <h:head>
         <title>Hello JSF</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
     </h:head>
     <h:body>
         <h:form>
@@ -15,6 +16,7 @@
             <h:inputText value="#{directorBean.director.country}"/>
             <h:commandButton value="Show" action="director"/>
         </h:form>
+        <h:form>
         <h:dataTable value="#{directorBean.directors}" var="d">
             <h:column>
                 #{d.name}
@@ -22,7 +24,11 @@
             <h:column>
                 #{d.country}
             </h:column>
+            <h:column>
+                <h:commandLink action="#{directorBean.films(d.id)}" value="movies"/>
+            </h:column>
         </h:dataTable>
+        </h:form>
     </h:body>
 </f:view>
 </html>

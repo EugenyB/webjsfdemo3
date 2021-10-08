@@ -1,10 +1,8 @@
 package com.example.demo3.data;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -70,5 +68,16 @@ public class Director {
                 ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 '}';
+    }
+
+    @OneToMany(mappedBy = "director")
+    private Collection<Movie> films;
+
+    public Collection<Movie> getFilms() {
+        return films;
+    }
+
+    public void setFilms(Collection<Movie> films) {
+        this.films = films;
     }
 }

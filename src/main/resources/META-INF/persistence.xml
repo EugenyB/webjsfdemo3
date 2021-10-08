@@ -5,6 +5,7 @@
              version="3.0">
     <persistence-unit name="default" transaction-type="JTA">
         <jta-data-source>jdbc/lecture</jta-data-source>
+        <class>com.example.demo3.data.Movie</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>

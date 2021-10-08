@@ -15,4 +15,8 @@ public class DirectorDAO {
     public List<Director> findAll() {
         return em.createQuery("select d from Director d", Director.class).getResultList();
     }
+
+    public Director find(int dId) {
+        return em.find(Director.class, dId);
+    }
 }

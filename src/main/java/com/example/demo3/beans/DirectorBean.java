@@ -29,4 +29,9 @@ public class DirectorBean implements Serializable {
     public List<Director> getDirectors() {
         return directorDAO.findAll();
     }
+
+    public String films(int dId) {
+        director = directorDAO.find(dId);
+        return "filmsbydirector";
+    }
 }
