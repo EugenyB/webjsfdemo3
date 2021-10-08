@@ -6,7 +6,10 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:head><title>Films By Director</title></h:head>
+    <h:head>
+        <title>Films By Director</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
     <h:body>
         <h1>Фильмы режиссера: #{directorBean.director.name}</h1>
         <h:dataTable value="#{directorBean.director.films}" var="film">

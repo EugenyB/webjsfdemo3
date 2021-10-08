@@ -3,5 +3,9 @@ table {
 }
 
 td {
-    background-color: white;
+    background-color: #b5f6f0;
+}
+
+th {
+    background-color: #e6f67b;
 }

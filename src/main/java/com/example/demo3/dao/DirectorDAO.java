@@ -19,4 +19,13 @@ public class DirectorDAO {
     public Director find(int dId) {
         return em.find(Director.class, dId);
     }
+
+    public void add(Director director) {
+        em.persist(director);
+    }
+
+    public void delete(int id) {
+        Director director = em.find(Director.class, id);
+        em.remove(director);
+    }
 }

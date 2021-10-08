@@ -14,18 +14,23 @@
         <h:form>
             <h:inputText value="#{directorBean.director.name}"/>
             <h:inputText value="#{directorBean.director.country}"/>
-            <h:commandButton value="Show" action="director"/>
+            <h:commandButton value="Add" action="#{directorBean.add()}"/>
         </h:form>
         <h:form>
         <h:dataTable value="#{directorBean.directors}" var="d">
             <h:column>
+                <f:facet name="header">Имя</f:facet>
                 #{d.name}
             </h:column>
             <h:column>
+                <f:facet name="header">Страна</f:facet>
                 #{d.country}
             </h:column>
             <h:column>
                 <h:commandLink action="#{directorBean.films(d.id)}" value="movies"/>
+            </h:column>
+            <h:column>
+                <h:commandButton action="#{directorBean.delete(d.id)}" value="Delete" />
             </h:column>
         </h:dataTable>
         </h:form>
